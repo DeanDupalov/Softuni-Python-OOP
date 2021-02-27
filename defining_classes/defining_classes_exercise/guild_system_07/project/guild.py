@@ -1,5 +1,6 @@
 from project.player import Player
 
+
 class Guild:
     class Guild:
         def __init__(self, name):
