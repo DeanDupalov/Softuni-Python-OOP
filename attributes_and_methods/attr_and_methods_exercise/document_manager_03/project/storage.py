@@ -1,6 +1,6 @@
-# from attributes_and_methods.document_management_3.project.category import Category
-# from attributes_and_methods.document_management_3.project.topic import Topic
-# from attributes_and_methods.document_management_3.project.document import Document
+from project.category import Category
+from project.topic import Topic
+from project.document import Document
 
 
 class Storage:
