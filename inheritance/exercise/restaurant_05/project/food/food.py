@@ -1,13 +1,15 @@
 from project.product import Product
-# from inheritance.restaurant_05.project.product import Product
 
 
 class Food(Product):
-
-    def __init__(self, name, price, grams):
+    def __init__(self, name, price: float, grams):
         super().__init__(name, price)
-        self._grams = grams
+        self.grams = grams
 
     @property
     def grams(self):
-        return self._grams
+        return self.__grams
+
+    @grams.setter
+    def grams(self, value):
+        self.__grams = value
