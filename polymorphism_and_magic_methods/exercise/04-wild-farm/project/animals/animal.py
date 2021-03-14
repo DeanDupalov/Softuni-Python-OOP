@@ -18,6 +18,14 @@ class Animal(ABC):
     def make_sound(self) -> str:
         ...
 
+    @abstractproperty
+    def _food_preferences(self) -> Union[Tuple[Food], None]:
+        pass
+
+    @abstractproperty
+    def _weight_gain_per_food(self) -> float:
+        ...
+
     def feed(self, food) -> Union[None, str]:
         if self._food_preferences and not isinstance(food, self._food_preferences):  # type: ignore
             return f'{self.__class__.__name__} does not eat {food.__class__.__name__}!'
@@ -26,13 +34,7 @@ class Animal(ABC):
         self.food_eaten += food.quantity
         return None
 
-    @abstractproperty
-    def _food_preferences(self) -> Union[Tuple[Food], None]:
-        ...
 
-    @abstractproperty
-    def _weight_gain_per_food(self) -> float:
-        pass
 
 
 class Bird(Animal):
