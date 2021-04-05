@@ -15,7 +15,7 @@ class YoungCoupleWithChildren(Room):
         super().__init__(family_name, budget=salary_one + salary_two, members_count=2 + len(children))
         self.room_cost = YoungCoupleWithChildren.__ROOM_COST
         self.children = list(children)
-        self.appliances = [[TV(), Fridge(), Laptop(), TV(), Fridge(), Laptop()]]
+        self.appliances = [TV(), Fridge(), Laptop(), TV(), Fridge(), Laptop()]
         for _ in children:
-            self.appliances.append([TV(), Fridge(), Laptop()])
-        self.calculate_expenses(*self.appliances, children)
+            self.appliances.extend([TV(), Fridge(), Laptop()])
+        self.calculate_expenses(self.appliances, children)

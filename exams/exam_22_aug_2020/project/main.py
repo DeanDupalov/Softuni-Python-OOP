@@ -1,3 +1,4 @@
+from project.rooms.alone_old import AloneOld
 from rooms.young_couple import YoungCouple
 from rooms.young_couple_with_children import YoungCoupleWithChildren
 
@@ -13,7 +14,7 @@ def test_one():
     child_one = Child(5, 1, 2, 1)
     child_two = Child(3, 2)
     young_couple_with_children = YoungCoupleWithChildren("Peterson", 600, 520, child_one, child_two)
-
+    # everland.add_room(AloneOld('test', 1000))
     everland.add_room(young_couple)
     everland.add_room(young_couple_with_children)
 
